@@ -1,0 +1,377 @@
+/* Compiled 2-1-2 Dopamine Menu Modal & Social Card Styling */
+
+.compiled-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  overflow-y: auto;
+}
+
+.compiled-modal-backdrop.hidden {
+  display: none;
+}
+
+.modal-window-wrapper {
+  background: #FFF1F5;
+  border: 3px solid;
+  border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.45);
+  width: 100%;
+  max-width: 680px;
+  max-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.modal-window-header {
+  background: var(--win-pink-bar);
+  padding: 6px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  font-weight: normal;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.modal-window-body {
+  padding: 14px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  background: #FDF4F8;
+}
+
+/* The Exportable Social Card (Matching the user mockup 1:1) */
+.compiled-card-wrapper {
+  width: 100%;
+  max-width: 600px;
+  /* Background set dynamically via JS to match the active wallpaper */
+  background-color: #fce7f3;
+  background-size: cover;
+  background-position: center;
+  border: 3px solid #111111;
+  box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.35);
+  padding: 24px 18px 28px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle sparkle star overlays on card */
+.compiled-card-wrapper::before {
+  content: "+";
+  position: absolute;
+  top: 15px;
+  left: 18px;
+  font-family: var(--font-pixel);
+  color: #ffffff;
+  font-size: 16px;
+  text-shadow: 0 0 6px #fff;
+  opacity: 0.8;
+}
+
+.compiled-card-wrapper::after {
+  content: "+";
+  position: absolute;
+  bottom: 20px;
+  right: 22px;
+  font-family: var(--font-pixel);
+  color: #ffffff;
+  font-size: 18px;
+  text-shadow: 0 0 8px #fff;
+  opacity: 0.8;
+}
+
+.compiled-header-title {
+  font-family: var(--font-pixel);
+  font-size: 20px;
+  color: #000000;
+  letter-spacing: -0.5px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+/* 2-1-2 Layout Grid */
+.compiled-grid-2-1-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.compiled-row {
+  width: 100%;
+  display: flex;
+  gap: 14px;
+}
+
+.top-row, .bottom-row {
+  flex-direction: row;
+}
+
+.middle-row {
+  justify-content: center;
+}
+
+.middle-row .retro-window-card {
+  width: 100%;
+  max-width: 480px;
+}
+
+.middle-row .card-content-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  min-height: 90px;
+}
+
+.middle-row .card-sticker-wrapper {
+  position: absolute;
+  left: calc(25% - 27px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  flex-shrink: 0;
+}
+
+.middle-row .card-items-list {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(50% - 27px);
+  width: max-content;
+  max-width: 48%;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Individual Window Card in Compiled Grid */
+.retro-window-card {
+  flex: 1;
+  background: #E5E7EB;
+  border: 2px solid #000000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+.card-title-bar {
+  background: #F9A8D4;
+  border-bottom: 2px solid #000000;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+.card-title-text {
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  color: #000000;
+  font-weight: normal;
+}
+
+.card-subtitle-bar {
+  background: #E5E7EB;
+  border-bottom: 2px solid #000000;
+  padding: 3px 6px;
+  text-align: center;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: #111111;
+}
+
+.card-viewport-frame {
+  position: relative;
+  background: #DFDFDF;
+  display: flex;
+  min-height: 96px;
+  border-bottom: 1px solid #000;
+}
+
+.card-content-area {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 8px 6px;
+  gap: 8px;
+  overflow: hidden;
+}
+
+.card-sticker-wrapper {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compiled-sticker-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  line-height: 1.35;
+  color: #000000;
+  overflow: hidden;
+}
+
+.compiled-list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.pixel-bullet {
+  font-family: var(--font-pixel);
+  font-size: 9px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.compiled-item-text {
+  word-break: break-word;
+}
+
+/* Classic Windows 95 Scrollbars */
+.retro-scrollbar {
+  background: #D1D5DB;
+  display: flex;
+  z-index: 2;
+}
+
+.vertical-scrollbar {
+  width: 14px;
+  border-left: 1px solid #000;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.horizontal-scrollbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 14px;
+  height: 14px;
+  border-top: 1px solid #000;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.scroll-arrow {
+  width: 100%;
+  height: 14px;
+  background: #E5E7EB;
+  border: 1px solid;
+  border-color: #FFFFFF #6B7280 #6B7280 #FFFFFF;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  line-height: 1;
+  user-select: none;
+}
+
+.horizontal-scrollbar .scroll-arrow {
+  width: 14px;
+  height: 100%;
+}
+
+.scroll-track {
+  flex: 1;
+  background: #D1D5DB;
+  position: relative;
+}
+
+.scroll-thumb {
+  background: #E5E7EB;
+  border: 1px solid;
+  border-color: #FFFFFF #6B7280 #6B7280 #FFFFFF;
+  position: absolute;
+}
+
+.vertical-scrollbar .scroll-thumb {
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 18px;
+}
+
+.horizontal-scrollbar .scroll-thumb {
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+}
+
+/* Modal Action Buttons Bar */
+.modal-actions-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.modal-action-btn {
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+.btn-primary-action {
+  background: var(--pink-600);
+  color: #FFFFFF;
+  border-color: var(--pink-300) var(--pink-900) var(--pink-900) var(--pink-300);
+}
+
+.btn-secondary-action {
+  background: #FFFFFF;
+  border-color: #FFFFFF #6B7280 #6B7280 #FFFFFF;
+  color: #374151;
+}
+
+/* Responsive adjustments for narrow mobile screens */
+@media (max-width: 480px) {
+  .compiled-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .card-items-list {
+    font-size: 7.5px;
+  }
+  .compiled-header-title {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,570 @@
+/* Retro Y2K Windows 95/98 Pink Design System */
+/* STRICT NO-EMOJI POLICY: Using pixel art glyphs, ASCII emoticons, and clean retro typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Outfit:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Y2K Pink Palette */
+  --pink-900: #881337;
+  --pink-800: #9F1239;
+  --pink-700: #BE185D;
+  --pink-600: #E11D48;
+  --pink-500: #F43F5E;
+  --pink-400: #FB7185;
+  --pink-300: #FDA4AF;
+  --pink-200: #FECDD3;
+  --pink-100: #FFE4E6;
+  --pink-50:  #FFF1F2;
+
+  /* Windows 95 Retro Accents */
+  --win-pink-bar: linear-gradient(90deg, #F43F5E 0%, #FDA4AF 100%);
+  --win-pink-bg: #FFE4E9;
+  --win-gray-bg: #ECECEC;
+  --win-white: #FFFFFF;
+  --win-dark: #2B1820;
+  --win-border-light: #FFFFFF;
+  --win-border-dark: #8B4D66;
+  --win-border-black: #111111;
+
+  /* Typography */
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-retro: 'VT323', monospace;
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
+/* Theme Overrides */
+body.theme-lavender {
+  --pink-900: #4c1d95;
+  --pink-800: #5b21b6;
+  --pink-700: #6d28d9;
+  --pink-600: #7c3aed;
+  --pink-500: #8b5cf6;
+  --pink-400: #a78bfa;
+  --pink-300: #c084fc;
+  --pink-200: #ddd6fe;
+  --pink-100: #ede9fe;
+  --pink-50:  #f5f3ff;
+  --win-pink-bar: linear-gradient(90deg, #8b5cf6 0%, #c084fc 100%);
+  --win-pink-bg: #ede9fe;
+  --win-border-dark: #5c3d70;
+}
+body.theme-mint {
+  --pink-900: #064e3b;
+  --pink-800: #065f46;
+  --pink-700: #047857;
+  --pink-600: #059669;
+  --pink-500: #10b981;
+  --pink-400: #34d399;
+  --pink-300: #6ee7b7;
+  --pink-200: #a7f3d0;
+  --pink-100: #d1fae5;
+  --pink-50:  #ecfdf5;
+  --win-pink-bar: linear-gradient(90deg, #10b981 0%, #6ee7b7 100%);
+  --win-pink-bg: #d1fae5;
+  --win-border-dark: #2d5a44;
+}
+body.theme-peach {
+  --pink-900: #7c2d12;
+  --pink-800: #9a3412;
+  --pink-700: #c2410c;
+  --pink-600: #ea580c;
+  --pink-500: #f97316;
+  --pink-400: #fb923c;
+  --pink-300: #ffc078;
+  --pink-200: #ffedd5;
+  --pink-100: #ffedd5;
+  --pink-50:  #fff7ed;
+  --win-pink-bar: linear-gradient(90deg, #f97316 0%, #ffc078 100%);
+  --win-pink-bg: #ffedd5;
+  --win-border-dark: #7c4d3d;
+}
+body.theme-sky {
+  --pink-900: #1e3a8a;
+  --pink-800: #1e40af;
+  --pink-700: #1d4ed8;
+  --pink-600: #2563eb;
+  --pink-500: #3b82f6;
+  --pink-400: #60a5fa;
+  --pink-300: #93c5fd;
+  --pink-200: #bfdbfe;
+  --pink-100: #dbeafe;
+  --pink-50:  #eff6ff;
+  --win-pink-bar: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%);
+  --win-pink-bg: #dbeafe;
+  --win-border-dark: #3d507c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #fce7f3;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  color: var(--win-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px;
+  overflow-x: hidden;
+  transition: background-image 0.3s ease;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+/* (Desktop top bar removed per design spec) */
+
+/* App Main Container */
+.app-container {
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* App Header Card */
+.app-header-card {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+  box-shadow: 3px 3px 0px rgba(139, 77, 102, 0.35);
+  padding: 16px 14px 12px 14px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.app-main-title {
+  font-family: var(--font-pixel);
+  font-size: 18px;
+  line-height: 1.4;
+  color: #111111;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  text-shadow: 1px 1px 0px rgba(255, 105, 180, 0.4);
+}
+
+/* Progress Tracker */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress-text-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--pink-800);
+}
+
+.progress-bar-track {
+  width: 100%;
+  height: 14px;
+  background: #f1f1f1;
+  border: 2px solid;
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  padding: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--pink-400), var(--pink-600));
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.wallpaper-swatches {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.wallpaper-swatch {
+  width: 32px;
+  height: 32px;
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 1px 0px #000;
+  transition: transform 0.1s ease;
+  border-radius: 1px;
+}
+
+.wallpaper-swatch:hover {
+  transform: scale(1.12);
+}
+
+.wallpaper-swatch.active {
+  border-color: var(--pink-600) var(--pink-900) var(--pink-900) var(--pink-600);
+  box-shadow: 0 0 0 2px var(--pink-400), 1px 1px 0px #000;
+  transform: scale(1.12);
+}
+
+.wallpaper-swatch.upload-swatch {
+  background: #FFFFFF;
+  color: var(--win-border-dark);
+  font-family: var(--font-pixel);
+  font-size: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--win-border-dark);
+  box-shadow: none;
+}
+
+.wallpaper-swatch.upload-swatch:hover {
+  background: #FFF0F5;
+  border-color: var(--pink-600);
+  color: var(--pink-600);
+}
+
+
+/* Retro Buttons General */
+.retro-btn {
+  background: var(--win-pink-bg);
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+  box-shadow: 1px 1px 0px #000;
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  font-weight: normal;
+  color: var(--win-dark);
+  cursor: pointer;
+  outline: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 14px;
+  user-select: none;
+  transition: transform 0.05s ease;
+}
+
+.retro-btn:active {
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  transform: translate(1px, 1px);
+  box-shadow: none;
+}
+
+/* Sticky Bottom Action Bar */
+.bottom-action-bar {
+  position: sticky;
+  bottom: 12px;
+  width: 100%;
+  max-width: 540px;
+  display: flex;
+  gap: 8px;
+  z-index: 50;
+  padding-top: 4px;
+}
+
+.shuffle-main-btn {
+  flex: 1;
+  background: #FFF0F5;
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+  color: var(--pink-800);
+  padding: 12px 10px;
+  font-size: 14px;
+}
+
+.see-menu-main-btn {
+  flex: 1.4;
+  background: var(--pink-600);
+  border: 2px solid;
+  border-color: var(--pink-300) var(--pink-900) var(--pink-900) var(--pink-300);
+  color: #FFFFFF;
+  padding: 12px 10px;
+  font-size: 15px;
+  text-shadow: 1px 1px 0px #000;
+}
+
+.see-menu-main-btn:hover {
+  background: var(--pink-500);
+}
+
+/* Gear Settings Button */
+.gear-btn {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF0F5;
+  border: 2px solid;
+  border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+  color: var(--pink-800);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.gear-icon-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transform: translateY(-2px); /* Offsets font metrics layout shift */
+}
+
+/* Settings Modal overrides */
+.settings-modal-wrapper {
+  max-width: 460px;
+}
+
+.settings-modal-body {
+  background: #FFFFFF;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.settings-popover-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.settings-popover-title {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--pink-800);
+  white-space: nowrap;
+  width: 90px;
+}
+
+/* Theme Swatches */
+.theme-swatches {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.theme-swatch {
+  width: 68px;
+  height: 28px;
+  border: 3px solid #701a75;
+  cursor: pointer;
+  outline: none;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: #3b0764; /* deep purple text */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 0px rgba(255, 182, 213, 0.5);
+  transition: transform 0.05s ease;
+  border-radius: 1px;
+  text-transform: lowercase;
+}
+
+.theme-swatch:hover {
+  transform: translateY(-1px);
+}
+
+.theme-swatch.active {
+  border: 3px solid #000000;
+  box-shadow: 2px 2px 0px rgba(255, 182, 213, 0.5);
+  transform: translateY(0);
+}
+
+/* Settings Divider */
+.settings-divider {
+  border: 0;
+  border-top: 2px solid var(--win-border-dark);
+  margin: 4px 0;
+  opacity: 0.3;
+}
+
+/* Settings Account Section */
+.settings-account-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.account-logged-in {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.account-username {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: var(--win-dark);
+}
+
+.account-logout-btn {
+  font-size: 7px;
+  padding: 4px 8px;
+}
+
+.account-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.account-login-form .form-row {
+  display: flex;
+  gap: 6px;
+}
+
+.account-input {
+  flex: 1;
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  padding: 5px;
+  border: 2px solid;
+  border-color: var(--win-border-dark) var(--win-border-light) var(--win-border-light) var(--win-border-dark);
+  background: #FFF;
+  color: #111;
+  outline: none;
+}
+
+.account-login-form .form-buttons {
+  display: flex;
+  gap: 6px;
+}
+
+.account-btn {
+  flex: 1;
+  font-size: 7px;
+  padding: 6px;
+}
+
+/* Archive Section */
+.settings-archive-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.archive-title {
+  font-family: var(--font-pixel);
+  font-size: 8px;
+  color: var(--pink-800);
+  border-bottom: 1px solid var(--win-border-dark);
+  padding-bottom: 4px;
+  margin-top: 4px;
+}
+
+.archive-placeholder {
+  font-family: var(--font-pixel);
+  font-size: 7px;
+  color: #6b7280;
+  text-align: center;
+  padding: 8px 0;
+}
+
+.archive-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-height: 140px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Style list scrollbar */
+.archive-list::-webkit-scrollbar {
+  width: 8px;
+}
+.archive-list::-webkit-scrollbar-track {
+  background: #ECECEC;
+}
+.archive-list::-webkit-scrollbar-thumb {
+  background: #C1C1C1;
+  border: 1px solid #FFF;
+}
+
+.archive-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 6px;
+  border: 1px solid #D1D5DB;
+  border-radius: 1px;
+}
+
+.archive-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.archive-item-date {
+  font-family: var(--font-pixel);
+  font-size: 6px;
+  color: #111;
+}
+
+.archive-item-count {
+  font-family: var(--font-pixel);
+  font-size: 5.5px;
+  color: #6b7280;
+}
+
+.archive-item-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.archive-action-btn {
+  font-size: 6px;
+  padding: 3px 6px;
+}
+
+
+
+/* Notice Toast */
+.retro-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100px);
+  background: #FFFBEB;
+  color: #92400E;
+  border: 2px solid;
+  border-color: #FCD34D #B45309 #B45309 #FCD34D;
+  box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
+  padding: 10px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  z-index: 9999;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  pointer-events: none;
+  text-align: center;
+  max-width: 90vw;
+}
+
+.retro-toast.show {
+  transform: translateX(-50%) translateY(0);
+}
