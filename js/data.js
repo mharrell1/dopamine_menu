@@ -129,9 +129,9 @@ export const WALLPAPERS = [
 ];
 
 export const THEMES = [
-  { id: "bubblegum", name: "pink", color: "#FBCFE8" },
-  { id: "lavender", name: "purple", color: "#E9D5FF" },
-  { id: "sky", name: "blue", color: "#BFDBFE" },
-  { id: "mint", name: "green", color: "#D1FAE5" }
+  { id: "bubblegum", name: "pink", color: "#F8BCD1" },
+  { id: "lavender", name: "purple", color: "#E2BFE7" },
+  { id: "sky", name: "blue", color: "#BBDEFB" },
+  { id: "mint", name: "green", color: "#C8E6C9" }
 ];
 

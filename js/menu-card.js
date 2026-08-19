@@ -139,7 +139,10 @@ export function copyMenuToClipboard(state, notifyEl) {
 export async function exportMenuAsImage(targetElement, filename) {
   if (!filename) {
     const now = new Date();
-    const dateStr = now.toLocaleDateString("en-US", { year: "numeric", month: "2-digit", day: "2-digit" }).replace(/\//g, "-");
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const dateStr = `${year}-${month}-${day}`;
     filename = `Dopamine Menu ${dateStr}.png`;
   }
   audio.playSuccess();
@@ -156,7 +159,14 @@ export async function exportMenuAsImage(targetElement, filename) {
       const link = document.createElement("a");
       link.download = filename;
       link.href = canvas.toDataURL("image/png");
+      link.style.display = "none";
+      document.body.appendChild(link);
       link.click();
+      // Also open in a new tab for visibility/fallback
+      window.open(link.href, '_blank');
+      document.body.removeChild(link);
+      // Notify user where the file was saved
+      // Download initiated; files will appear in the default Downloads folder.
       return;
     } catch (e) {
       console.warn("html2canvas export error, using canvas fallback", e);
@@ -173,7 +183,7 @@ function fallbackCanvasExport(filename) {
   canvas.height = 1080;
   const ctx = canvas.getContext("2d");
 
-  // Background
+  // Background gradient
   const gradient = ctx.createLinearGradient(0, 0, 1080, 1080);
   gradient.addColorStop(0, "#f9d5e5");
   gradient.addColorStop(0.5, "#e3d5ff");
@@ -190,7 +200,10 @@ function fallbackCanvasExport(filename) {
   const link = document.createElement("a");
   link.download = filename;
   link.href = canvas.toDataURL("image/png");
+  link.style.display = "none";
+  document.body.appendChild(link);
   link.click();
+  document.body.removeChild(link);
 }
 
 function escapeHtml(str) {

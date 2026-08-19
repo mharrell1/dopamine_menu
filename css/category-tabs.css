@@ -19,7 +19,7 @@
   min-width: 86px;
   background: #E5E7EB;
   border: 2px solid;
-  border-color: #FFFFFF #6B7280 #6B7280 #FFFFFF;
+  border-color: #FFFFFF var(--win-border-dark) var(--win-border-dark) #FFFFFF;
   padding: 8px 4px;
   font-family: var(--font-pixel);
   font-size: 7px;
@@ -38,13 +38,13 @@
 }
 
 .retro-tab-button:hover {
-  background: #F3F4F6;
+  background: var(--win-btn-bg);
 }
 
 .retro-tab-button.active {
-  background: #FFF0F5;
-  border-color: #FFFFFF #BE185D #BE185D #FFFFFF;
-  color: var(--pink-700);
+  background: var(--win-pink-bg);
+  border-color: #FFFFFF var(--win-border-dark) var(--win-border-dark) #FFFFFF;
+  color: var(--pink-900);
   font-weight: 800;
   box-shadow: inset 0 -2px 0 var(--pink-600);
   transform: translateY(-1px);
@@ -52,7 +52,7 @@
 
 .tab-badge {
   font-size: 6px;
-  color: var(--pink-600);
+  color: var(--pink-800);
   font-weight: normal;
 }
 
@@ -145,7 +145,7 @@
 .window-sel-count {
   font-family: var(--font-pixel);
   font-size: 7px;
-  color: var(--pink-700);
+  color: var(--pink-800);
 }
 
 /* Selection Viewport (matches compiled card viewport style) */
@@ -227,11 +227,11 @@
 }
 
 .select-row:hover {
-  background: rgba(255, 182, 213, 0.35);
+  background: var(--selection-highlight-hover);
 }
 
 .select-row.selected {
-  background: rgba(255, 182, 213, 0.55);
+  background: var(--selection-highlight);
 }
 
 .select-row.dimmed {
@@ -249,7 +249,7 @@
 }
 
 .select-row.selected .select-bullet {
-  color: var(--pink-700);
+  color: var(--pink-800);
 }
 
 .select-text {

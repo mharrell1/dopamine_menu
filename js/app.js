@@ -254,7 +254,7 @@ class DopamineMenuApp {
         title="${theme.name}"
         aria-label="${theme.name}"
       >${theme.name}</button>
-    `).join("");
+    `).join('');
     this.themeSwatchesEl.querySelectorAll(".theme-swatch").forEach(btn => {
       btn.addEventListener("click", () => {
         audio.playClick();

@@ -1,7 +1,8 @@
-const CACHE_NAME = "dopamine-menu-cache-v1";
+const CACHE_NAME = "dopamine-menu-cache-v2";
 const ASSETS = [
   "./",
   "./index.html",
+  "./manifest.json",
   "./css/retro-theme.css",
   "./css/category-tabs.css",
   "./css/compiled-menu.css",
@@ -17,7 +18,10 @@ const ASSETS = [
   "./assets/stickers/specials.png",
   "./assets/wallpapers/bg1.jpeg",
   "./assets/wallpapers/bg2.jpeg",
-  "./assets/wallpapers/bg3.jpeg"
+  "./assets/wallpapers/bg3.jpeg",
+  "./assets/icons/icon-192x192.png",
+  "./assets/icons/icon-512x512.png",
+  "./assets/icons/apple-touch-icon.png"
 ];
 
 // Install Service Worker and cache all critical assets

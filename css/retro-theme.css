@@ -4,27 +4,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&family=Outfit:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Y2K Pink Palette */
-  --pink-900: #881337;
-  --pink-800: #9F1239;
-  --pink-700: #BE185D;
-  --pink-600: #E11D48;
-  --pink-500: #F43F5E;
-  --pink-400: #FB7185;
-  --pink-300: #FDA4AF;
-  --pink-200: #FECDD3;
-  --pink-100: #FFE4E6;
-  --pink-50:  #FFF1F2;
+  /* Default Theme (Pink / Bubblegum) */
+  --theme-color: #F8BCD1;
+  --pink-900: #4a148d;
+  --pink-800: #7b20a2;
+  --pink-700: #be185d;
+  --pink-600: #e11d48;
+  --pink-500: #f8bcd1;
+  --pink-400: #f8bcd1;
+  --pink-300: #f6d4de;
+  --pink-200: #fce7f3;
+  --pink-100: #fdf2f8;
+  --pink-50:  #fff5f7;
 
   /* Windows 95 Retro Accents */
-  --win-pink-bar: linear-gradient(90deg, #F43F5E 0%, #FDA4AF 100%);
-  --win-pink-bg: #FFE4E9;
+  --win-pink-bar: linear-gradient(90deg, #F8BCD1 0%, #F6D4DE 100%);
+  --win-pink-bg: #F8BCD1;
+  --win-btn-bg: #FFF5F7;
+  --win-btn-active: #F8BCD1;
   --win-gray-bg: #ECECEC;
   --win-white: #FFFFFF;
   --win-dark: #2B1820;
   --win-border-light: #FFFFFF;
-  --win-border-dark: #8B4D66;
+  --win-border-dark: #7B20A2;
   --win-border-black: #111111;
+  --selection-highlight: rgba(248, 188, 209, 0.55);
+  --selection-highlight-hover: rgba(248, 188, 209, 0.3);
 
   /* Typography */
   --font-pixel: 'Press Start 2P', monospace;
@@ -34,65 +39,85 @@
 }
 
 /* Theme Overrides */
+body.theme-bubblegum {
+  --theme-color: #f8bcd1;
+  --pink-900: #4a148d;
+  --pink-800: #7b20a2;
+  --pink-700: #be185d;
+  --pink-600: #e11d48;
+  --pink-500: #f8bcd1;
+  --pink-400: #f8bcd1;
+  --pink-300: #f6d4de;
+  --pink-200: #fce7f3;
+  --pink-100: #fdf2f8;
+  --pink-50:  #fff5f7;
+  --win-pink-bar: linear-gradient(90deg, #f8bcd1 0%, #f6d4de 100%);
+  --win-pink-bg: #f8bcd1;
+  --win-btn-bg: #fff5f7;
+  --win-btn-active: #f8bcd1;
+  --win-border-dark: #7b20a2;
+  --selection-highlight: rgba(248, 188, 209, 0.55);
+  --selection-highlight-hover: rgba(248, 188, 209, 0.3);
+}
 body.theme-lavender {
-  --pink-900: #4c1d95;
+  --theme-color: #e2bfe7;
+  --pink-900: #4a148d;
   --pink-800: #5b21b6;
-  --pink-700: #6d28d9;
-  --pink-600: #7c3aed;
-  --pink-500: #8b5cf6;
-  --pink-400: #a78bfa;
-  --pink-300: #c084fc;
-  --pink-200: #ddd6fe;
-  --pink-100: #ede9fe;
-  --pink-50:  #f5f3ff;
-  --win-pink-bar: linear-gradient(90deg, #8b5cf6 0%, #c084fc 100%);
-  --win-pink-bg: #ede9fe;
-  --win-border-dark: #5c3d70;
+  --pink-700: #7b20a2;
+  --pink-600: #8e24aa;
+  --pink-500: #ab47bc;
+  --pink-400: #ce93d8;
+  --pink-300: #e2bfe7;
+  --pink-200: #ede7f6;
+  --pink-100: #e2bfe7;
+  --pink-50:  #f8f4fb;
+  --win-pink-bar: linear-gradient(90deg, #7b20a2 0%, #e2bfe7 100%);
+  --win-pink-bg: #e2bfe7;
+  --win-btn-bg: #f8f4fb;
+  --win-btn-active: #e2bfe7;
+  --win-border-dark: #7b20a2;
+  --selection-highlight: rgba(226, 191, 231, 0.55);
+  --selection-highlight-hover: rgba(226, 191, 231, 0.3);
 }
 body.theme-mint {
-  --pink-900: #064e3b;
-  --pink-800: #065f46;
-  --pink-700: #047857;
-  --pink-600: #059669;
-  --pink-500: #10b981;
-  --pink-400: #34d399;
-  --pink-300: #6ee7b7;
-  --pink-200: #a7f3d0;
-  --pink-100: #d1fae5;
-  --pink-50:  #ecfdf5;
-  --win-pink-bar: linear-gradient(90deg, #10b981 0%, #6ee7b7 100%);
-  --win-pink-bg: #d1fae5;
-  --win-border-dark: #2d5a44;
-}
-body.theme-peach {
-  --pink-900: #7c2d12;
-  --pink-800: #9a3412;
-  --pink-700: #c2410c;
-  --pink-600: #ea580c;
-  --pink-500: #f97316;
-  --pink-400: #fb923c;
-  --pink-300: #ffc078;
-  --pink-200: #ffedd5;
-  --pink-100: #ffedd5;
-  --pink-50:  #fff7ed;
-  --win-pink-bar: linear-gradient(90deg, #f97316 0%, #ffc078 100%);
-  --win-pink-bg: #ffedd5;
-  --win-border-dark: #7c4d3d;
+  --theme-color: #c8e6c9;
+  --pink-900: #1b5e20;
+  --pink-800: #2e7d32;
+  --pink-700: #388e3c;
+  --pink-600: #43a047;
+  --pink-500: #66bb6a;
+  --pink-400: #81c784;
+  --pink-300: #a5d6a7;
+  --pink-200: #c8e6c9;
+  --pink-100: #c8e6c9;
+  --pink-50:  #f1f8f3;
+  --win-pink-bar: linear-gradient(90deg, #388e3c 0%, #c8e6c9 100%);
+  --win-pink-bg: #c8e6c9;
+  --win-btn-bg: #f1f8f3;
+  --win-btn-active: #c8e6c9;
+  --win-border-dark: #2e7d32;
+  --selection-highlight: rgba(200, 230, 201, 0.55);
+  --selection-highlight-hover: rgba(200, 230, 201, 0.3);
 }
 body.theme-sky {
-  --pink-900: #1e3a8a;
-  --pink-800: #1e40af;
-  --pink-700: #1d4ed8;
-  --pink-600: #2563eb;
-  --pink-500: #3b82f6;
-  --pink-400: #60a5fa;
-  --pink-300: #93c5fd;
-  --pink-200: #bfdbfe;
-  --pink-100: #dbeafe;
-  --pink-50:  #eff6ff;
-  --win-pink-bar: linear-gradient(90deg, #3b82f6 0%, #93c5fd 100%);
-  --win-pink-bg: #dbeafe;
-  --win-border-dark: #3d507c;
+  --theme-color: #bbdefb;
+  --pink-900: #0d47a1;
+  --pink-800: #1565c0;
+  --pink-700: #1976d2;
+  --pink-600: #1e88e5;
+  --pink-500: #42a5f5;
+  --pink-400: #90caf9;
+  --pink-300: #bbdefb;
+  --pink-200: #bbdefb;
+  --pink-100: #bbdefb;
+  --pink-50:  #f0f7fe;
+  --win-pink-bar: linear-gradient(90deg, #1976d2 0%, #bbdefb 100%);
+  --win-pink-bg: #bbdefb;
+  --win-btn-bg: #f0f7fe;
+  --win-btn-active: #bbdefb;
+  --win-border-dark: #1565c0;
+  --selection-highlight: rgba(187, 222, 251, 0.55);
+  --selection-highlight-hover: rgba(187, 222, 251, 0.3);
 }
 
 * {
@@ -114,7 +139,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 12px;
+  justify-content: center;
+  padding: 24px 12px;
   overflow-x: hidden;
   transition: background-image 0.3s ease;
 }
@@ -132,6 +158,7 @@ body.modal-open {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: auto 0;
 }
 
 /* App Header Card */
@@ -169,7 +196,7 @@ body.modal-open {
   align-items: center;
   font-size: 13px;
   font-weight: 600;
-  color: var(--pink-800);
+  color: #000000;
 }
 
 .progress-bar-track {
@@ -185,7 +212,7 @@ body.modal-open {
 .progress-bar-fill {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg, var(--pink-400), var(--pink-600));
+  background: var(--win-pink-bar);
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -233,7 +260,7 @@ body.modal-open {
 }
 
 .wallpaper-swatch.upload-swatch:hover {
-  background: #FFF0F5;
+  background: var(--win-btn-bg);
   border-color: var(--pink-600);
   color: var(--pink-600);
 }
@@ -280,27 +307,47 @@ body.modal-open {
 
 .shuffle-main-btn {
   flex: 1;
-  background: #FFF0F5;
+  background: var(--win-pink-bg);
   border: 2px solid;
   border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
-  color: var(--pink-800);
+  color: var(--pink-900);
   padding: 12px 10px;
   font-size: 14px;
+  box-shadow: 2px 2px 0px #000000;
+  transition: all 0.08s ease;
+}
+
+.shuffle-main-btn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.shuffle-main-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #000000;
 }
 
 .see-menu-main-btn {
   flex: 1.4;
-  background: var(--pink-600);
+  background: var(--win-pink-bar);
   border: 2px solid;
-  border-color: var(--pink-300) var(--pink-900) var(--pink-900) var(--pink-300);
-  color: #FFFFFF;
+  border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
+  color: var(--pink-900);
   padding: 12px 10px;
   font-size: 15px;
-  text-shadow: 1px 1px 0px #000;
+  font-weight: bold;
+  box-shadow: 2px 2px 0px #000000;
+  transition: all 0.08s ease;
 }
 
 .see-menu-main-btn:hover {
-  background: var(--pink-500);
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.see-menu-main-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #000000;
 }
 
 /* Gear Settings Button */
@@ -312,12 +359,24 @@ body.modal-open {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: #FFF0F5;
+  background: var(--win-pink-bg);
   border: 2px solid;
   border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
-  color: var(--pink-800);
+  color: var(--pink-900);
   font-size: 20px;
   line-height: 1;
+  box-shadow: 2px 2px 0px #000000;
+  transition: all 0.08s ease;
+}
+
+.gear-btn:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.gear-btn:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px #000000;
 }
 
 .gear-icon-inner {
@@ -325,7 +384,7 @@ body.modal-open {
   align-items: center;
   justify-content: center;
   line-height: 1;
-  transform: translateY(-2px); /* Offsets font metrics layout shift */
+  transform: translateY(-4px); /* Move icon higher for perfect centering */
 }
 
 /* Settings Modal overrides */
@@ -351,7 +410,7 @@ body.modal-open {
 .settings-popover-title {
   font-family: var(--font-pixel);
   font-size: 7px;
-  color: var(--pink-800);
+  color: #4a148d;
   white-space: nowrap;
   width: 90px;
 }
@@ -367,16 +426,16 @@ body.modal-open {
 .theme-swatch {
   width: 68px;
   height: 28px;
-  border: 3px solid #701a75;
+  border: 3px solid #7b20a2;
   cursor: pointer;
   outline: none;
   font-family: var(--font-pixel);
   font-size: 7px;
-  color: #3b0764; /* deep purple text */
+  color: #4a148d; /* exact deep purple text from mockup */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 2px 2px 0px rgba(255, 182, 213, 0.5);
+  box-shadow: 2px 2px 0px #f6d4de;
   transition: transform 0.05s ease;
   border-radius: 1px;
   text-transform: lowercase;
@@ -388,7 +447,7 @@ body.modal-open {
 
 .theme-swatch.active {
   border: 3px solid #000000;
-  box-shadow: 2px 2px 0px rgba(255, 182, 213, 0.5);
+  box-shadow: 2px 2px 0px #f6d4de;
   transform: translateY(0);
 }
 
