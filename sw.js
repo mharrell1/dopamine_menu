@@ -1,11 +1,14 @@
-const CACHE_NAME = "dopamine-menu-cache-v2";
+const CACHE_NAME = "dopamine-menu-cache-v9";
 const ASSETS = [
   "./",
   "./index.html",
   "./manifest.json",
   "./css/retro-theme.css",
+  "./css/retro-theme.css?v=9",
   "./css/category-tabs.css",
+  "./css/category-tabs.css?v=9",
   "./css/compiled-menu.css",
+  "./css/compiled-menu.css?v=9",
   "./js/app.js",
   "./js/data.js",
   "./js/storage.js",
@@ -19,6 +22,9 @@ const ASSETS = [
   "./assets/wallpapers/bg1.jpeg",
   "./assets/wallpapers/bg2.jpeg",
   "./assets/wallpapers/bg3.jpeg",
+  "./assets/icons/icon-16x16.png",
+  "./assets/icons/icon-32x32.png",
+  "./assets/icons/icon-180x180.png",
   "./assets/icons/icon-192x192.png",
   "./assets/icons/icon-512x512.png",
   "./assets/icons/apple-touch-icon.png"
@@ -50,23 +56,21 @@ self.addEventListener("activate", (e) => {
   self.clients.claim();
 });
 
-// Cache-first strategy for fetching resources
+// Network-first for CSS/JS to guarantee instant live development updates, fallback to cache
 self.addEventListener("fetch", (e) => {
   e.respondWith(
-    caches.match(e.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(e.request).then((networkResponse) => {
-        // Cache newly fetched assets dynamically if appropriate
-        if (networkResponse.status === 200) {
+    fetch(e.request)
+      .then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
           const clone = networkResponse.clone();
           caches.open(CACHE_NAME).then((cache) => {
             cache.put(e.request, clone);
           });
         }
         return networkResponse;
-      });
-    })
+      })
+      .catch(() => {
+        return caches.match(e.request);
+      })
   );
 });

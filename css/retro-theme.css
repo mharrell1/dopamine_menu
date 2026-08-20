@@ -18,7 +18,7 @@
   --pink-50:  #fff5f7;
 
   /* Windows 95 Retro Accents */
-  --win-pink-bar: linear-gradient(90deg, #F8BCD1 0%, #F6D4DE 100%);
+  --win-pink-bar: #F8BCD1;
   --win-pink-bg: #F8BCD1;
   --win-btn-bg: #FFF5F7;
   --win-btn-active: #F8BCD1;
@@ -51,7 +51,7 @@ body.theme-bubblegum {
   --pink-200: #fce7f3;
   --pink-100: #fdf2f8;
   --pink-50:  #fff5f7;
-  --win-pink-bar: linear-gradient(90deg, #f8bcd1 0%, #f6d4de 100%);
+  --win-pink-bar: #f8bcd1;
   --win-pink-bg: #f8bcd1;
   --win-btn-bg: #fff5f7;
   --win-btn-active: #f8bcd1;
@@ -71,7 +71,7 @@ body.theme-lavender {
   --pink-200: #ede7f6;
   --pink-100: #e2bfe7;
   --pink-50:  #f8f4fb;
-  --win-pink-bar: linear-gradient(90deg, #7b20a2 0%, #e2bfe7 100%);
+  --win-pink-bar: #e2bfe7;
   --win-pink-bg: #e2bfe7;
   --win-btn-bg: #f8f4fb;
   --win-btn-active: #e2bfe7;
@@ -91,7 +91,7 @@ body.theme-mint {
   --pink-200: #c8e6c9;
   --pink-100: #c8e6c9;
   --pink-50:  #f1f8f3;
-  --win-pink-bar: linear-gradient(90deg, #388e3c 0%, #c8e6c9 100%);
+  --win-pink-bar: #c8e6c9;
   --win-pink-bg: #c8e6c9;
   --win-btn-bg: #f1f8f3;
   --win-btn-active: #c8e6c9;
@@ -111,7 +111,7 @@ body.theme-sky {
   --pink-200: #bbdefb;
   --pink-100: #bbdefb;
   --pink-50:  #f0f7fe;
-  --win-pink-bar: linear-gradient(90deg, #1976d2 0%, #bbdefb 100%);
+  --win-pink-bar: #bbdefb;
   --win-pink-bg: #bbdefb;
   --win-btn-bg: #f0f7fe;
   --win-btn-active: #bbdefb;
@@ -140,7 +140,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 24px 12px;
+  padding: 16px 8px;
   overflow-x: hidden;
   transition: background-image 0.3s ease;
 }
@@ -149,16 +149,15 @@ body.modal-open {
   overflow: hidden;
 }
 
-/* (Desktop top bar removed per design spec) */
-
 /* App Main Container */
 .app-container {
   width: 100%;
   max-width: 540px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
   margin: auto 0;
+  padding: 0 4px;
 }
 
 /* App Header Card */
@@ -168,18 +167,18 @@ body.modal-open {
   border: 2px solid;
   border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
   box-shadow: 3px 3px 0px rgba(139, 77, 102, 0.35);
-  padding: 16px 14px 12px 14px;
+  padding: 14px 12px 10px 12px;
   text-align: center;
   border-radius: 2px;
 }
 
 .app-main-title {
   font-family: var(--font-pixel);
-  font-size: 18px;
-  line-height: 1.4;
+  font-size: clamp(14px, 4vw, 18px);
+  line-height: 1.35;
   color: #111111;
   letter-spacing: -0.5px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   text-shadow: 1px 1px 0px rgba(255, 105, 180, 0.4);
 }
 
@@ -190,13 +189,18 @@ body.modal-open {
   gap: 6px;
 }
 
-.progress-text-row {
+.progress-text-row,
+#progress-count-text {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 13px;
-  font-weight: 600;
+  font-family: var(--font-pixel), 'Press Start 2P', monospace !important;
+  font-size: clamp(6.8px, 1.8vw, 8px);
+  font-weight: normal;
   color: #000000;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  text-align: center;
 }
 
 .progress-bar-track {
@@ -296,23 +300,25 @@ body.modal-open {
 /* Sticky Bottom Action Bar */
 .bottom-action-bar {
   position: sticky;
-  bottom: 12px;
+  bottom: 8px;
   width: 100%;
   max-width: 540px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
   z-index: 50;
   padding-top: 4px;
 }
 
 .shuffle-main-btn {
   flex: 1;
+  min-width: 0;
   background: var(--win-pink-bg);
   border: 2px solid;
   border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
   color: var(--pink-900);
-  padding: 12px 10px;
-  font-size: 14px;
+  padding: 10px 8px;
+  font-size: clamp(9px, 2.7vw, 12px);
+  white-space: nowrap;
   box-shadow: 2px 2px 0px #000000;
   transition: all 0.08s ease;
 }
@@ -328,14 +334,16 @@ body.modal-open {
 }
 
 .see-menu-main-btn {
-  flex: 1.4;
+  flex: 1.35;
+  min-width: 0;
   background: var(--win-pink-bar);
   border: 2px solid;
   border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
   color: var(--pink-900);
-  padding: 12px 10px;
-  font-size: 15px;
+  padding: 10px 8px;
+  font-size: clamp(9px, 2.7vw, 12px);
   font-weight: bold;
+  white-space: nowrap;
   box-shadow: 2px 2px 0px #000000;
   transition: all 0.08s ease;
 }
@@ -353,8 +361,8 @@ body.modal-open {
 /* Gear Settings Button */
 .gear-btn {
   flex: 0 0 auto;
-  width: 44px;
-  height: 44px;
+  width: 38px;
+  height: 38px;
   padding: 0;
   display: inline-flex;
   align-items: center;
@@ -363,7 +371,7 @@ body.modal-open {
   border: 2px solid;
   border-color: var(--win-border-light) var(--win-border-dark) var(--win-border-dark) var(--win-border-light);
   color: var(--pink-900);
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1;
   box-shadow: 2px 2px 0px #000000;
   transition: all 0.08s ease;
@@ -384,7 +392,7 @@ body.modal-open {
   align-items: center;
   justify-content: center;
   line-height: 1;
-  transform: translateY(-4px); /* Move icon higher for perfect centering */
+  transform: translateY(-2px);
 }
 
 /* Settings Modal overrides */

@@ -30,16 +30,16 @@ A **Dopamine Menu** is an ADHD and neurodivergent-friendly framework that treats
 
 ## ✨ Features
 
-- **Retro Windows 95/98 Aesthetic**: Authentic bevel borders, pixel title bars (`_ [] X`), retro typography (`Press Start 2P`), and custom sticker graphics.
-- **4 Y2K Pastel Color Themes**: Real-time theme switching between **Pink**, **Purple**, **Blue**, and **Green** with synchronized buttons, borders, and progress indicators.
+- **Retro Windows 95/98 Aesthetic**: Authentic bevel borders, pixel title bars (`_ [] X`), 8-bit retro pixel typography (`Press Start 2P`), and custom sticker graphics.
+- **4 Coordinated Pastel Color Themes**: Real-time flat theme switching between **Bubblegum (Pink)**, **Lavender (Purple)**, **Mint (Green)**, and **Sky (Blue)** with synchronized buttons, borders, and progress indicators.
 - **Custom Wallpaper Selection**: Choose from retro sparkling backgrounds or upload your own custom photo/wallpaper.
 - **Interactive Course Tabs**: Switch seamlessly between categories, select up to 3 favorites per section, or add custom activities.
 - **Global Shuffle**: Instantly randomize your full menu with one click.
-- **Compiled 2-1-2 Social Card**: View your complete personalized order on a retro Windows desktop dashboard.
-- **High-Res PNG Export**: Download your completed menu directly to your device with date-stamped filenames (`Dopamine Menu YYYY-MM-DD.png`).
+- **Compiled 2-1-2 Social Card**: View your complete personalized order on a retro Windows desktop dashboard with centered activity alignment.
+- **High-Res PNG Export & Web Share**: Download your completed menu directly to your device or share/save to Photos on iOS & Android via the native Web Share sheet and retro long-press preview modal.
 - **Copy to Clipboard**: Format and copy your daily checklist in one click.
 - **Local Account & Archive System**: Client-side registration/login that automatically archives past menus with restore and delete options.
-- **PWA & Offline Ready**: Fully functional offline via Service Worker caching.
+- **PWA & Offline Ready**: Installable as a standalone app on iOS, Android, and Desktop with offline Service Worker caching.
 
 ---
 
@@ -67,7 +67,7 @@ You can install this app directly on your phone, tablet, or desktop with no app 
 ## 🛠️ Tech Stack
 
 - **HTML5**: Semantic app shell and PWA meta tags
-- **Vanilla CSS3**: Custom properties, Y2K Windows bevel design tokens, dynamic themes
+- **Vanilla CSS3**: Custom properties, Y2K Windows bevel design tokens, responsive typography
 - **JavaScript (ES6 Modules)**: State management, audio synthesizer, DOM controllers
 - **html2canvas**: High-resolution image export
 - **Service Worker & Manifest**: PWA installation and offline caching

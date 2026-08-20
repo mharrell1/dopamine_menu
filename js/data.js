@@ -55,7 +55,7 @@ export const CATEGORIES = [
     name: "MAIN",
     displayName: "Main",
     subtitle: "ENERGIZING ACTIVITIES",
-    subtitleDisplay: "Energizing activities",
+    subtitleDisplay: "Energizing Activities",
     tip: "Tip: Keep it to 3 choices to avoid overwhelm",
     sticker: "assets/stickers/main.png",
     stickerAlt: "Green Frog in Shirt Sticker",

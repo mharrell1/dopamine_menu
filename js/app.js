@@ -119,7 +119,7 @@ class DopamineMenuApp {
       downloadImgBtn.addEventListener("click", () => {
         const card = document.getElementById("exportable-menu-card");
         if (card) {
-          exportMenuAsImage(card);
+          exportMenuAsImage(card, this.showNotice.bind(this), downloadImgBtn);
         }
       });
     }

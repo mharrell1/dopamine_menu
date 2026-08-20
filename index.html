@@ -7,9 +7,9 @@
   <meta name="description" content="A cute Y2K Windows OS style self-care menu to help you choose feel-good activities for your day." />
   
   <!-- Retro CSS Stylesheets -->
-  <link rel="stylesheet" href="css/retro-theme.css" />
-  <link rel="stylesheet" href="css/category-tabs.css" />
-  <link rel="stylesheet" href="css/compiled-menu.css" />
+  <link rel="stylesheet" href="css/retro-theme.css?v=9" />
+  <link rel="stylesheet" href="css/category-tabs.css?v=9" />
+  <link rel="stylesheet" href="css/compiled-menu.css?v=9" />
 
   <!-- html2canvas library for high-res social image export -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -139,6 +139,38 @@
           </button>
         </div>
 
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Save / Share Preview Modal (Optimized for Mobile Save to Photos) -->
+  <div id="image-preview-modal" class="compiled-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="preview-modal-title">
+    <div class="modal-window-wrapper preview-modal-wrapper">
+      <div class="modal-window-header">
+        <span id="preview-modal-title">Save / Share Menu Image</span>
+        <button id="preview-modal-close-btn" class="win-btn win-close" aria-label="Close Preview Modal">X</button>
+      </div>
+      <div class="modal-window-body preview-modal-body">
+        <div class="preview-instruction-box">
+          <span class="preview-tip-badge">MOBILE TIP</span>
+          <span class="preview-tip-text">Tap &amp; hold (long-press) the image to save directly to your Photos!</span>
+        </div>
+        
+        <div class="preview-image-scroll-wrapper">
+          <img id="preview-exported-image" src="" alt="Dopamine Menu Preview" class="preview-exported-image" />
+        </div>
+
+        <div class="modal-actions-bar preview-actions-bar">
+          <button id="preview-share-btn" class="retro-btn modal-action-btn btn-primary-action">
+            Share / Save to Photos
+          </button>
+          <button id="preview-download-btn" class="retro-btn modal-action-btn btn-secondary-action">
+            Download File
+          </button>
+          <button id="preview-close-action-btn" class="retro-btn modal-action-btn btn-secondary-action">
+            Done
+          </button>
+        </div>
       </div>
     </div>
   </div>

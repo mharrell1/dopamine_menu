@@ -4,10 +4,11 @@
 .category-tabs-container {
   width: 100%;
   display: flex;
-  gap: 4px;
+  gap: 3px;
   overflow-x: auto;
   padding-bottom: 2px;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .category-tabs-container::-webkit-scrollbar {
@@ -16,13 +17,13 @@
 
 .retro-tab-button {
   flex: 1;
-  min-width: 86px;
+  min-width: 0;
   background: #E5E7EB;
   border: 2px solid;
   border-color: #FFFFFF var(--win-border-dark) var(--win-border-dark) #FFFFFF;
-  padding: 8px 4px;
+  padding: 6px 2px;
   font-family: var(--font-pixel);
-  font-size: 7px;
+  font-size: clamp(5.5px, 1.8vw, 7px);
   font-weight: normal;
   color: #4B5563;
   cursor: pointer;
@@ -32,7 +33,9 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
+  line-height: 1.1;
   user-select: none;
   transition: all 0.1s ease;
 }
@@ -51,7 +54,7 @@
 }
 
 .tab-badge {
-  font-size: 6px;
+  font-size: clamp(5px, 1.4vw, 6px);
   color: var(--pink-800);
   font-weight: normal;
 }
