@@ -141,38 +141,42 @@
 }
 
 .middle-row .card-content-area {
-  display: flex;
+  display: grid;
+  grid-template-columns: clamp(100px, 35%, 175px) 1fr;
   align-items: center;
-  justify-content: flex-start;
-  padding: 6px 12px 6px 16px;
-  gap: clamp(16px, 3.5vw, 24px);
+  padding: 6px 12px 6px 4px;
   min-height: 84px;
+  gap: 0px;
 }
 
 .middle-row .card-sticker-wrapper {
-  width: clamp(38px, 8vw, 48px);
-  height: clamp(38px, 8vw, 48px);
-  flex-shrink: 0;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 4px;
+  margin: 0 auto;
+}
+
+.middle-row .card-sticker-wrapper .compiled-sticker-img {
+  width: clamp(38px, 8vw, 48px);
+  height: clamp(38px, 8vw, 48px);
+  object-fit: contain;
 }
 
 .middle-row .card-items-list {
-  flex: 1;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   gap: 4px;
   font-family: var(--font-pixel);
-  font-size: clamp(5.8px, 1.35vw, 7.5px);
-  line-height: 1.4;
+  font-size: clamp(5.6px, 1.3vw, 7.4px);
+  line-height: 1.45;
   color: #000000;
-  padding-left: 0;
-  margin: 0;
+  padding-left: 4px;
+  padding-right: 6px;
+  min-width: 0;
 }
 
 /* Individual Window Card in Compiled Grid */
