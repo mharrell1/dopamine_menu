@@ -1,4 +1,4 @@
-const CACHE_NAME = "dopamine-menu-cache-v9";
+const CACHE_NAME = "dopamine-menu-cache-v10";
 const ASSETS = [
   "./",
   "./index.html",
